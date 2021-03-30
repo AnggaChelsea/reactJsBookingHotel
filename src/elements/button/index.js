@@ -49,21 +49,23 @@ export default function Button(props) {
       );
     }
   }
-  return;
+  return(
   <button className={className.join(" ")} style={props.style} onClick={onClick}>
     {props.children}
-  </button>;
+  </button>
+  )
 }
 
 Button.propsTypes = {
   //this just check for types of button
   types: propsTypes.oneOf(["button", "Link"]),
-  onClick: propTypes.func,
-  target: propTypes.string,
-  href: propTypes.string,
-  className: propTypes.bool,
-  isDisabled: propTypes.bool,
-  isLoading: propTypes.bool,
+  onClick: propsTypes.function,
+  target: propsTypes.string,
+  href: propsTypes.string,
+  className: propsTypes.bool,
+  isDisabled: propsTypes.bool,
+  isLoading: propsTypes.bool,
+  isExternal: propsTypes.bool,
   isSmall: propsTypes.bool,
   isLarge: propsTypes.bool,
   isBlock: propsTypes.bool,
